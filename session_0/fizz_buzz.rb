@@ -8,16 +8,15 @@ def fizz_buzz(n:, x: 3, y: 5)
     raise ArgumentError
   end
   for i in 1..n
-    if((i % x==0) && (i % y==0))
+    if (i % x == 0) && (i % y == 0)
       a.append("FizzBuzz")
-    elsif(i % x==0)
+    elsif(i % x == 0)
       a.append("Fizz")
-    elsif(i % y==0)
+    elsif(i % y == 0)
       a.append("Buzz")
     else
       a.append(i.to_s)
     end
   end
   return a
-  #raise NotImplementedError # TODO
 end
