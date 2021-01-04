@@ -23,7 +23,7 @@ class Item
   # Returns a boolean value whether than item is discounted i.e. the
   # discount deadline has been crossed or not.
   def discounted?
-    return !(Time.now > @discount_deadline)
+    return Time.now <= @discount_deadline
   end
 
   # If the item is discounted, the current price is 
