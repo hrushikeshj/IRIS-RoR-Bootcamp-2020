@@ -2,13 +2,9 @@
 # any non-lower case alphabet (A..Z) to corresponding lower case
 # alphabet
 def lower_case(words)
-	wr=[]
-	words.each do |w|
-		wr.push(w.downcase)
-	end
-	return wr
+	return words.map { |w| w.downcase }
 end
-
+#print lower_case(['', 'HELLO', 'WoRlD', 'nice'])
 # Similar to `lower_case`, this function modifies the array in-place
 # and does not return any value.
 def lower_case!(words)
@@ -25,13 +21,7 @@ end
 # words_with_prefix('apple', ['apple', 'ball', 'applesauce']) would
 # return the words 'apple' and 'applesauce'.
 def words_with_prefix(prefix, words)
-	match=[]
-	words.each do |w|
-		if w.start_with?(prefix)
-			match.push(w)
-		end
-	end
-	return match
+	return words.select { |w| w.start_with?(prefix)}
 end
 #print words_with_prefix('apple', ['apple', 'ball', 'applesauce'])
 # The similarity score between two words is defined as the length of
@@ -50,7 +40,7 @@ def similarity_score(word_1, word_2)
 	l=word_1.size > word_2.size ? word_2.size : word_1.size
 	max=0
 	for i in 1..l
-		if word_1[0,i].downcase==word_2[0,i].downcase
+		if word_1[0,i].downcase == word_2[0,i].downcase
 			max=i
 		else
 			break

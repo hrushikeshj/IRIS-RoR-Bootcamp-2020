@@ -23,7 +23,7 @@ class Item
   # Returns a boolean value whether than item is discounted i.e. the
   # discount deadline has been crossed or not.
   def discounted?
-    return Time.now > @discount_deadline ? false : true
+    return !(Time.now > @discount_deadline)
   end
 
   # If the item is discounted, the current price is 
@@ -32,9 +32,9 @@ class Item
   # TODO: Implement instance method 'current_price'
   def current_price
     if discounted?
-      return @price * (100 - @discount_rate) /100
+      return price * (100 - @discount_rate) /100
     else
-      return @price
+      return price
     end
   end
   # The stock price of item is defined as product of current price and
