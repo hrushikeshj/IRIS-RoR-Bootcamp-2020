@@ -11,7 +11,7 @@ def lower_case!(words)
   words.map do |w|
     w.downcase!
    end
-  return words
+   return nil
 end
 
 # Given a prefix and an array of words, return an array containing
