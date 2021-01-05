@@ -48,9 +48,7 @@ class Item
   # should be zero.
   def self.stock_price_by_category(items)
     total = Hash.new()
-    for i in 1..CATEGORIES.size
-      total[i]=0
-    end
+    CATEGORIES.each { |key| total[key[0]]=0 }
     items.each do |x|
         total[x.category_id]+=x.current_price * x.quantity
     end
