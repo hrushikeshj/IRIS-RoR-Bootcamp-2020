@@ -3,19 +3,19 @@
 # ["1", "Fizz", "Buzz", "Fizz", "5", "FizzBuzz"]
 
 def fizz_buzz(n:, x: 3, y: 5)
-  a=[]
   if(n<0 || x<=0 || y<=0)
     raise ArgumentError
   end
-  for i in 1..n
+  a=(1..n).to_a
+  a.map! do |i|
     if (i % x == 0) && (i % y == 0)
-      a.append("FizzBuzz")
+      i="FizzBuzz"
     elsif(i % x == 0)
-      a.append("Fizz")
+      i="Fizz"
     elsif(i % y == 0)
-      a.append("Buzz")
+      i="Buzz"
     else
-      a.append(i.to_s)
+     i=i.to_s
     end
   end
   return a

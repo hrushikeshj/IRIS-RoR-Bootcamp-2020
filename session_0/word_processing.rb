@@ -37,6 +37,7 @@ end
 # The function `similarity_score` takes two words and returns the
 # similarity score (an integer).
 def similarity_score(word_1, word_2)
+	# l is the length of the shorter word,
 	l=word_1.size > word_2.size ? word_2.size : word_1.size
 	max=0
 	for i in 1..l
