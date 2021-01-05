@@ -47,15 +47,20 @@ class Item
   # Note: If there are no items for category, stock price for category
   # should be zero.
   def self.stock_price_by_category(items)
-    total = {
-      1 => 0,
-      2 => 0,
-      3 => 0,
-      4 => 0
-    }
+    total = Hash.new()
+    for i in 1..CATEGORIES.size
+      total[i]=0
+    end
     items.each do |x|
-      total[x.category_id]+=x.current_price * x.quantity
+        total[x.category_id]+=x.current_price * x.quantity
     end
   return total
   end
 end
+
+#this can be used but the hash it returns will not always have 4(number of CATEGORIES) keys
+#  total = Hash.new(0)
+#    items.each do |x|
+#        total[x.category_id]+=x.current_price * x.quantity
+#    end
+#  return total
