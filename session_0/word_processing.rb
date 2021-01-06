@@ -37,19 +37,13 @@ end
 # The function `similarity_score` takes two words and returns the
 # similarity score (an integer).
 def similarity_score(word_1, word_2)
-	# l is the length of the shorter word,
-	l=word_1.size > word_2.size ? word_2.size : word_1.size
 	max=0
-	for i in 1..l
-		if word_1[0,i].downcase == word_2[0,i].downcase
-			max=i
-		else
-			break
-		end
+	while word_1[max] == word_2[max] && max != word_1.size
+		max+=1
 	end
 	return max
 end
-#print similarity_score('applepie', 'apple')
+#print similarity_score('apple', 'apple')
 # Given a chosen word and an array of words, return an array of word(s)
 # with the maximum similarity score in the order they appear.
 def most_similar_words(chosen_word, words)
