@@ -103,10 +103,9 @@ class Cricketer < ApplicationRecord
         end
         #update centuries and half centries
         #p player.half_centuries
-        #if player.runs_scored >= 50 && player.runs_scored < 100  <--?
-        if player.runs_scored >= 50
+        if b[2] >= 50 && b[2] < 100
           player.half_centuries += 1
-        elsif player.runs_scored >= 100
+        elsif b[2] >= 100
           player.centuries += 1
         end
         player.save
