@@ -4,7 +4,7 @@ class CreateStudents < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :roll_number
       t.string :branch
-      t.decimal :cgpa, :precision => 10, :scale => 2
+      t.decimal :cgpa, :precision => 3, :scale => 2
       t.text :address
       t.integer :admission_year
       t.timestamps
