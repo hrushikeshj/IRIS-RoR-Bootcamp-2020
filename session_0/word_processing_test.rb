@@ -8,8 +8,8 @@ class WordProcessingTest < Minitest::Test
 
   def test_lower_case!
     words = ['', 'HELLO', 'WoRlD', 'nice']
-    lower_case!(words)
-
+    #lower_case!(words)
+    assert_nil lower_case!(words)
     assert_equal ['', 'hello', 'world', 'nice'], words
   end
 

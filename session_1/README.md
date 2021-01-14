@@ -2,8 +2,6 @@
 
 The first sesssion is all about getting started with Rails.
 
-[Session 1 - Getting Started with Rails (Slides)](slides.pdf)
-
 We will create a website with two pages - a Home Page and an About Me
 page.
 
