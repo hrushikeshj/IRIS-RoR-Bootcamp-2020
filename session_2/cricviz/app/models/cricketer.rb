@@ -82,8 +82,8 @@ class Cricketer < ApplicationRecord
   # the message.
   def self.update_innings(batting_scorecard, bowling_scorecard)
     batting_scorecard.each do |b|
-      if Cricketer.exists?(name: b[0])
-        player = Cricketer.find_by(name: b[0])
+      player = Cricketer.find_by(name: b[0])
+      if player != nil
         player.matches += 1
         player.sixes_scored += b[5]
         player.fours_scored += b[4]
@@ -109,8 +109,8 @@ class Cricketer < ApplicationRecord
     end
 
     bowling_scorecard.each do |b|
-      if Cricketer.exists?(name: b[0])
-        player = Cricketer.find_by(name: b[0])
+      player = Cricketer.find_by(name: b[0])
+      if player != nil
         # [Player name, Balls bowled, Maidens bowled, Runs given, Wickets]
         player.matches += 1
         player.innings_bowled += 1
