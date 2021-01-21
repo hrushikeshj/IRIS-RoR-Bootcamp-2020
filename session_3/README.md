@@ -1,3 +1,24 @@
+# Blog
+
+![Not logedin](blog_ss/not_loggedin.png)
+When not loged in user can only read public article.
+
+![edit](blog_ss/1.png)
+User can only delete his articles
+
+
+![limit](blog_ss/limit.png)
+Loged-in user can only read five private articles
+
+![Admin](blog_ss/admin.png)
+(For now anyone can create account as admin, I will change this later)
+
+![Admin](blog_ss/admin_power.png)
+Admin can delete or edit any article
+
+_______________________________________________________________________________________________
+
+
 # Session 3 - Controllers and Routing
 
 We now take a closer look at _Controller_ of the MVC architecture and
