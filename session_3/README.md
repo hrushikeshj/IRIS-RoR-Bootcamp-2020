@@ -4,11 +4,11 @@
 When not loged in user can only read public article.
 
 ![edit](blog_ss/1.png)
-User can only delete his articles
+Users can only delete their articles
 
 
 ![limit](blog_ss/limit.png)
-Loged-in user can only read five private articles
+Loged-in users can only read five private articles
 
 ![Admin](blog_ss/admin.png)
 (For now anyone can create account as admin, I will change this later)
