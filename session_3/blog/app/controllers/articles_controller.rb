@@ -19,9 +19,8 @@ class ArticlesController < ApplicationController
     #to keep count of private articles read
     if session[:private_articles_left] == 0
       render "articles/limit"
-    elsif session[:user_id] && !Article.find(params[:id]).public && !session[:admin]
+    elsif session[:user_id] && !@article.public && !current_user.admin
       session[:private_articles_left]-=1
-      
     end
   end
 
