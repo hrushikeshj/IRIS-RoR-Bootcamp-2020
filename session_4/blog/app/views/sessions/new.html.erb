@@ -1,0 +1,15 @@
+
+<h1 style="text-align:center;">Login</h1>
+<div class="container-sm" style="width:40%; min-width:400px">
+  <%= bootstrap_form_with url: sessions_path do |f| %>
+
+      <%= f.email_field :email %>
+
+      <%= f.password_field :password %>
+
+
+    <div class="text-center">
+      <%= f.submit "Submit", class: 'btn btn-primary' %>
+    </div>
+<div>
+<% end %>

@@ -1,0 +1,23 @@
+
+  <div class="card" >
+  <img src="<%= url_for(article.image) %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">
+     <%= article.title %>
+    </h5>
+      <h5 class="card-subtitle mb-2 text-muted">
+        <%= article.topic %>
+      </h5>
+    <p class="card-text">
+    <%= article.content[0, 80] %>
+    </p>
+    <%= link_to 'Read More', article, class: 'text-white btn btn-primary' %>    
+
+    <% if article.user_id == session[:user_id] || session[:admin] %>
+      <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-outline-warning' %>   
+    <% end %>
+    <% if article.user_id == session[:user_id] || session[:admin] %>
+      <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } ,class: ' btn btn-outline-danger'%>
+    <% end %>
+  </div>
+</div>
