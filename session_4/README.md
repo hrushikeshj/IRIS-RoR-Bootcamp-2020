@@ -12,7 +12,7 @@ Users can only edit their articles
 
 
 
-Aricle with image and number of views
+Article with image and number of views
 
 ![arti-show.png](blog_ss/arti-show.png)
 
