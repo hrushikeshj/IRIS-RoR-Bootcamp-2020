@@ -1,14 +1,23 @@
+<div class="container-flow">
+<img class="cover-img" src="<%=url_for(@article.image)%>">
+  <h1 class="display-1"><%= @article.title %></h1>
+  <p class="lead">
+    <%= User.find(@article.user_id).name %> - <%= @article.created_at.strftime('%F') %>
+  </p>
+  <p class="lead">Views: <%= @article.views %><p>
+
+
+  <p class="content">
+    
+    <%= @article.content %>
+  </p>
+
+    <% if @article.user_id == session[:user_id] || session[:admin] %>
+      <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning' %>   
+    <% end %>
+    <% if @article.user_id == session[:user_id] || session[:admin] %>
+      <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } ,class: ' btn btn-outline-danger'%>
+    <% end %><br>
+  <%= link_to 'Back', articles_path %>
+  
 <div>
-<p>
-  <strong>Name:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @article.content %>
-</p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
-<img src="<%=url_for(@article.image)%>">

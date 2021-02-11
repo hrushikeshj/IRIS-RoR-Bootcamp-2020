@@ -17,8 +17,20 @@
  @import "rails_bootstrap_forms";
  .container-fluid{
     width:90%;
+    
     margin: auto;
     padding: 5px;
+ }
+ .cover-img{
+   width:60%;
+   margin-left:10%;
+   box-shadow: 1px 24px 24px -14px #363b40 !important;
+ }
+
+ .content{
+   line-height: 1.8;    
+   font-size: 20px;
+   color: #363b40;
  }
  nav a:hover{
     background-color: #00000011;
@@ -35,3 +47,22 @@
        
     }
  }
+#carouselExampleCaptions{
+   width:60%; 
+   margin:auto;
+}
+.links{
+   color: #000;
+   text-decoration:none;
+
+}
+.limks:link ,.links:visited , .links:hover {
+   color: #000;
+   text-decoration:none;
+   background-color: #00110011;
+}
+.carousel-item{
+   h5{
+      font-size: 40px;
+   }
+}

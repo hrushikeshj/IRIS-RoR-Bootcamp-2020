@@ -6,6 +6,8 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
+    #to show popular articles
+    @popular_articles=Article.order(views: :DESC).limit(3)
     #unregistered users can only read 5 articles
     if session[:user_id] && !session[:private_articles_left]
       session[:private_articles_left]=current_user.private_articles_left
