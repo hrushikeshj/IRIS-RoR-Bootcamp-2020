@@ -1,5 +1,5 @@
 
-#Blog
+# Blog
 
 Carousel of popular articles(based on views)
 
@@ -23,7 +23,7 @@ Aricle with image and number of views
 
 ___________________________________________
 
-##Alerts and notices
+## Alerts and notices
 
 When a user tries to visit a unauthorized page
 
@@ -66,7 +66,7 @@ Users
 ![a2.png](blog_ss/a2.png)
 _______________________________________
 
-##Users
+## Users
 
 /users/index
 User can edit only his profile
@@ -80,7 +80,7 @@ User can edit only his profile
 
 _______________________________________________
 
-##Forms
+## Forms
 
 New article(edit article will also be similar to this)
 
