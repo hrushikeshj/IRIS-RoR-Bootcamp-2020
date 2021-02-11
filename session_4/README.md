@@ -1,23 +1,23 @@
 
 # Blog
 
-Carousel of popular articles(based on views)
+### Carousel of popular articles(based on views)
 
 ![Carousel](blog_ss/carousel.gif)
 
 
-Users can only edit their articles
+### Users can only edit their articles
 
 ![arti-edit.png](blog_ss/arti-edit.png)
 
 
 
-Article with image and number of views
+### Article with image and number of views
 
 ![arti-show.png](blog_ss/arti-show.png)
 
 
-2
+### 2
 
 ![arti-show2.png](blog_ss/arti-show2.png)
 
@@ -25,42 +25,42 @@ ___________________________________________
 
 ## Alerts and notices
 
-When a user tries to visit a unauthorized page
+### When a user tries to visit a unauthorized page
 
 ![un.png](blog_ss/un.png)
 
 
 
-Only loged-in users can read private articles
+### Only loged-in users can read private articles
 
 ![log.png](blog_ss/log.png)
 
 
 
-Users can only read 5 private articles
+### Users can only read 5 private articles
 
 ![lim.png](blog_ss/lim.png)
 
 
 
-When a user logs in
+### When a user logs in
 
 ![in.png](blog_ss/in.png)
 
 
 
-When a user logs out
+### When a user logs out
 
 ![out.png](blog_ss/out.png)
 _____________________________________________
 
-##Admin Powers(Call read, delete and modify)
+## Admin Powers(Call read, delete and modify)
 
-Articles
+### Articles
 
 ![a1.png](blog_ss/a1.png)
 
-Users
+### Users
 
 
 ![a2.png](blog_ss/a2.png)
@@ -68,13 +68,13 @@ _______________________________________
 
 ## Users
 
-/users/index
+### /users/index
 User can edit only his profile
 
 ![u1.png](blog_ss/u1.png)
 
 
-/users/show/:id
+### /users/show/:id
 
 ![u2.png](blog_ss/u2.png)
 
@@ -82,11 +82,12 @@ _______________________________________________
 
 ## Forms
 
-New article(edit article will also be similar to this)
+### New article
+(edit article will also be similar to this)
 
 ![new.png](blog_ss/new.png)
 
-New user
+### New user
 
 ![newuser.png](blog_ss/newuser.png)
 __________________________________________________
