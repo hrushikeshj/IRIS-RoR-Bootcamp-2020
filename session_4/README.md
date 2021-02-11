@@ -54,7 +54,7 @@ ___________________________________________
 ![out.png](blog_ss/out.png)
 _____________________________________________
 
-## Admin Powers(Call read, delete and modify)
+## Admin Powers(Can read, delete and modify any article of user data)
 
 ### Articles
 
