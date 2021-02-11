@@ -54,13 +54,13 @@ ___________________________________________
 ![out.png](blog_ss/out.png)
 _____________________________________________
 
-## Admin Powers(Can read, delete and modify any article of user data)
+## Admin Powers(Can read, delete and modify any article or user data)
 
 ### Articles
 
 ![a1.png](blog_ss/a1.png)
 
-### Users
+### Users(admin can delete or modify user data)
 
 
 ![a2.png](blog_ss/a2.png)
