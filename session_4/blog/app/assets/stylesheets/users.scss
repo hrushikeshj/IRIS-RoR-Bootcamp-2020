@@ -1,3 +1,29 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.user-show{
+    margin:auto; 
+    margin-top:50px; 
+    background-color:#959595 !important;
+    border-radius: 7px;
+    padding:20px;
+    #h{
+        margin-bottom: 30px;
+    }
+}
+table {
+    padding-top: 20px;
+    border-collapse: collapse;
+    width: 50%;
+    margin: auto;
+    th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      th{
+        background-color: #28f10d9a;
+      }
+      tr :hover{
+        background-color: #f2f2f2;
+      }
+  }

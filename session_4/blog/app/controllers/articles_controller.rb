@@ -25,12 +25,13 @@ class ArticlesController < ApplicationController
     @article.update(views: @article.views+1)
     #to keep count of private articles read
     if session[:private_articles_left] == 0 && !@article.public
-      render "articles/limit"
+      redirect_to root_url, alert: "Private Article limit reached"
     elsif session[:user_id] && !@article.public && !current_user.admin
       session[:private_articles_left]-=1
       flash[:alert]="Private articles left:"+ session[:private_articles_left].to_s
       current_user.update( private_articles_left: session[:private_articles_left])
     end
+
   end
 
   #when session[:private_articles_left]

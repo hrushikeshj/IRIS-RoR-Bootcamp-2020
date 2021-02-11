@@ -50,13 +50,14 @@
         
       </div>
     </nav>
-    <% if flash[:notice]%>
+
+  <div class="container-fluid">
+      <% if flash[:notice]%>
       <%= render partial: 'notice', locals: {msg: flash[:notice], type: "info"} %>
     <%end%>
     <% if flash[:alert]%>
       <%= render partial: 'notice', locals: {msg: flash[:alert], type: "danger"} %>
     <%end%>
-  <div class="container-fluid">
     <%= yield %>
   </div>
   
