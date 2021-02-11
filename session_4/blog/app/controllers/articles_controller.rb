@@ -31,6 +31,16 @@ class ArticlesController < ApplicationController
       flash[:alert]="Private articles left:"+ session[:private_articles_left].to_s
       current_user.update( private_articles_left: session[:private_articles_left])
     end
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "article",
+        page_size: 'A4',
+        template: "articles/show.html.erb",
+        layout: "pdf.html",
+        orientation: "Portrait"
+      end
+     end
 
   end
 

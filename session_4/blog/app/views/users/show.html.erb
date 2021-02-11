@@ -11,7 +11,7 @@
 
   
 
-    <% if @user.id == session[:user_id] || session[:admin] %>
+    <% if @user.id == session[:user_id] || session[:admin] %>    
       <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-warning' %>   
       <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } ,class: ' btn btn-outline-danger'%>
     <% end %>

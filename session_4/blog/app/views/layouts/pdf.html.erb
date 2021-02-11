@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PDF</title>
+  <%= wicked_pdf_stylesheet_link_tag "application" -%>
+
+     <%= wicked_pdf_javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" %>
+</head>
+<body>
+<div>
+  <%= image_tag(@article.image, class: "img-fluid shadow-lg", style: "max-width:100%;", alt: "img") %>
+</div>
+  <div class='container'>
+    <%= yield %>
+  </div>
+</body>
+</html>

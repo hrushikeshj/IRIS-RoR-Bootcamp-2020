@@ -97,5 +97,7 @@ _______________________________________________
 ![login.png](blog_ss/login.png)
 __________________________________________________
 
-TODO
-Download articles as PDFs
+
+## Download articles as PDFs
+
+![pdf](blog_ss/pdf.png)

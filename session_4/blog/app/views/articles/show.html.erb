@@ -11,6 +11,7 @@
     
     <%= @article.content %>
   </p>
+    <%= link_to 'Create PDF document', article_path(@article, format: :pdf), class: 'btn text-white btn-primary' %>
     <% if @article.user_id == session[:user_id] || session[:admin] %>
       <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning' %>   
       <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } ,class: ' btn btn-outline-danger'%>
