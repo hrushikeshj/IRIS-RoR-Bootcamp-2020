@@ -1,7 +1,7 @@
 
 # Blog
 
-### Carousel of popular articles(based on views)
+### Carousel of popular articles(based on number of views)
 
 ![Carousel](blog_ss/carousel.gif)
 
@@ -90,6 +90,11 @@ _______________________________________________
 ### New user
 
 ![newuser.png](blog_ss/newuser.png)
+
+
+### Log in
+
+![login.png](blog_ss/login.png)
 __________________________________________________
 
 TODO
