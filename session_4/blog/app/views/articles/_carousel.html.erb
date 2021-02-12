@@ -5,8 +5,9 @@
     <% end %>
   </ol>
   <div class="carousel-inner" >
+
     <% active = "active" %>
-    <% articles.each_with_index do |article,i| %>
+    <% articles.each do |article| %>
     <div class="carousel-item <%= active %> ">
       <img src="<%= url_for(article.image) %>" class="d-block w-100" alt="img">
       <div class="carousel-caption d-none d-md-block">
@@ -15,6 +16,7 @@
       </div>
       <% active = "" %>
     </div>
+
     <% end %>
   </div>
 
