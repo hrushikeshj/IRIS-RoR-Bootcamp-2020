@@ -8,15 +8,14 @@
 
     <% active = "active" %>
     <% articles.each do |article| %>
-    <div class="carousel-item <%= active %> ">
-      <img src="<%= url_for(article.image) %>" class="d-block w-100" alt="img">
-      <div class="carousel-caption d-none d-md-block">
-        <h5><%= link_to article.title, article, class: 'links' %></h5>
-        <p><%= article.content[0,80] %></p>
+      <div class="carousel-item <%= active %> ">
+        <img src="<%= url_for(article.image) %>" class="d-block w-100" alt="img">
+        <div class="carousel-caption d-none d-md-block">
+          <h5><%= link_to article.title, article, class: 'links' %></h5>
+          <p><%= article.content[0,80] %></p>
+        </div>
+        <% active = "" %>
       </div>
-      <% active = "" %>
-    </div>
-
     <% end %>
   </div>
 
