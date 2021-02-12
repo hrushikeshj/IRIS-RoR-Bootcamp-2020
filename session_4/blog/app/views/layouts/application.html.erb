@@ -40,26 +40,26 @@
             </li>
           <% else %>
           <li class="nav-item">
-            <%= link_to 'Sign Up', signup_path, class: "nav-link"%>
+            <%= link_to 'Sign Up', signup_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Log In', login_path, class: "nav-link"%>
+            <%= link_to 'Log In', login_path, class: "nav-link" %>
           </li>
           <% end %>          
         </ul>
         
       </div>
     </nav>
-
-  <div class="container-fluid">
-      <% if flash[:notice]%>
-      <%= render partial: 'notice', locals: {msg: flash[:notice], type: "info"} %>
-    <%end%>
-    <% if flash[:alert]%>
-      <%= render partial: 'notice', locals: {msg: flash[:alert], type: "danger"} %>
-    <%end%>
-    <%= yield %>
-  </div>
+    
+    <div class="container-fluid">
+      <% if flash[:notice] %>
+        <%= render partial: 'notice', locals: {msg: flash[:notice], type: "info"} %>
+      <%end%>
+      <% if flash[:alert]%>
+        <%= render partial: 'notice', locals: {msg: flash[:alert], type: "danger"} %>
+      <%end%>
+      <%= yield %>
+    </div>
   
   </body>
 </html>

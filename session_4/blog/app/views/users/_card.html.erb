@@ -1,6 +1,6 @@
 
   <div class="card" >
-  <img class="card-img" src="<%= url_for(article.image) %>" class="card-img-top" alt="<%= article.title %>">
+  <img class="card-img" src="<%= url_for(article.image) %>" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">
      <%= article.title %>
@@ -14,9 +14,7 @@
     <% if can? :show, article %>
       <%= link_to 'Read More', article, class: 'text-white btn btn-primary' %>
     <% else %>
-      <button type="button" class="text-white btn btn-primary private" data-toggle="popover" title="Private article" data-content="Login to read Private article">
-        Read More
-      </button>
+      <%= link_to 'Login to read more', '#', class: 'text-white btn btn-warning'%>
     <%end%>    
 
     <% if can? :edit, article%>

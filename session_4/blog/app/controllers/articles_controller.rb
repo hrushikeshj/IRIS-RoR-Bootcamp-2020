@@ -12,9 +12,6 @@ class ArticlesController < ApplicationController
     if session[:user_id] && !session[:private_articles_left]
       session[:private_articles_left]=current_user.private_articles_left
     end
-    if !session[:user_id]
-      flash[:notice] ||="Login to read private article"
-    end
     @articles = Article.all
   end
 

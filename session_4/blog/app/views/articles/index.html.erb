@@ -1,7 +1,7 @@
 
 <h1 class="text-center " >Popular Articles</h1>
 
-<%= render partial: 'carousel', locals: {a1: @popular_articles[0], a2: @popular_articles[1], a3: @popular_articles[2] } %>
+<%= render partial: 'carousel', locals: { articles: @popular_articles[0,3] } %>
 
 <div class="grid">
 <% @articles.each do |article| %>

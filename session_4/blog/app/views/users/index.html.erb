@@ -20,12 +20,12 @@
         <td><%= user.email %></td>
         <td><%= link_to 'Show', user, class: 'text-white btn btn-primary' %> </td>
         <td>
-        <% if user.id == session[:user_id] || session[:admin] %>
+        <% if can? :destroy, user %>
           <%= link_to 'Edit', edit_user_path(user), class: 'btn btn-warning' %>   
         <% end %>
         </td>
         <td>
-        <% if user.id == session[:user_id] || session[:admin] %>
+        <% if can? :destroy, user %>
           <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-white btn btn-danger' %>   
         <% end %>
         </td>

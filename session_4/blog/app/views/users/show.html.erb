@@ -1,4 +1,4 @@
-<div class="container user-show">
+<div class="container-fluid user-show">
   <h2>
     <strong>Name:</strong>
     <%= @user.name %>
@@ -9,11 +9,19 @@
     <%= @user.email %>
   </h2>
 
-  
-
-    <% if @user.id == session[:user_id] || session[:admin] %>    
-      <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-warning' %>   
-      <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } ,class: ' btn btn-outline-danger'%>
-    <% end %>
+  <% if can? :destroy, @user%>    
+    <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-warning' %>   
+    <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } ,class: ' btn btn-outline-danger'%>
+  <% end %>
   <%= link_to 'Back', articles_path, class: "btn btn-outline-dark" %>
+
+  <h1 class="text-center " >User's Articles</h1>
+
+  <div class="grid user-grid">
+  <% @articles.each do |article| %>
+    <%= render partial: 'card', locals: {article: article} %>
+  <% end %>
+  <div>
+
+
 </div>

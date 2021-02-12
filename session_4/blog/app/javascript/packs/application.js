@@ -12,3 +12,8 @@ import 'bootstrap'
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+$(function () {
+    $('.private').popover({
+      container: 'body'
+    })
+  })
