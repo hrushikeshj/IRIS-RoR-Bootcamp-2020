@@ -101,3 +101,14 @@ __________________________________________________
 ## Download articles as PDFs
 
 ![pdf](blog_ss/pdf.png)
+
+___________________________________________________________________
+
+## User profile page
+
+![profile](blog_ss/prof.png)
+
+
+## Popovers
+
+![Popovers](blog_ss/pri.png)
