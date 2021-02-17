@@ -13,7 +13,8 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 $(function () {
-    $('.private').popover({
-      container: 'body'
-    })
-  })
+  $('.private').popover({
+    container: 'body'
+  });
+  $('#heart_inactive').popover();   
+})

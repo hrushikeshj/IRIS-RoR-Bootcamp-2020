@@ -1,8 +1,9 @@
 class ArticlesController < ApplicationController
   load_and_authorize_resource
 
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :like, :unlike]
+  before_action :add_view, only: [:show]
+  before_action :set_view, only: [:like, :unlike, :show]
   # GET /articles
   # GET /articles.json
   def index
@@ -17,9 +18,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   # GET /articles/1.json
-  def show
-    #increase views(bad implementation as single user can give multiple views)
-    @article.update(views: @article.views+1)
+  def show  
     #to keep count of private articles read
     if session[:private_articles_left] == 0 && !@article.public
       redirect_to root_url, alert: "Private Article limit reached"
@@ -92,6 +91,30 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def like
+    #to like an article
+    if @view
+      @view.update( liked: true )
+      msg = "success"
+    else
+      msg = "err"
+    end
+    likes = View.where( liked: true ).count
+    render json: {status: msg, action: "liked", likes: likes}.to_json
+    
+  end
+
+  def unlike
+    if @view
+      @view.update( liked: false )
+      msg = "success"
+    else
+      msg = "err"
+    end
+    likes = View.where( liked: true ).count
+    render json: {status: msg, likes: likes, action: "unliked"}.to_json
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
@@ -101,5 +124,24 @@ class ArticlesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def article_params
       params.require(:article).permit(:title, :topic, :tags, :content, :public, :image)
+    end
+    
+    #to add views
+    def add_view
+      if current_user
+        if !View.find_by("user_id = ? AND article_id = ? ", current_user.id, @article.id )
+          View.new(user_id: current_user.id, article_id: @article.id).save
+          #increase views
+          @article.update(views: @article.views+1)
+        end
+      end
+    end
+
+    def set_view
+      if current_user
+        @view = View.find_by("user_id = ? AND article_id = ? ", current_user.id, @article.id )
+      else
+        @view = nil
+      end
     end
 end

@@ -1,3 +1,31 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.like, .liked{
+    color: #000;
+    text-decoration:none;
+ 
+ }
+ .like:link ,.like:visited , .like:hover{
+    color: #000;
+    text-decoration:none;
+    background-color: #fff;
+ }
+ .liked:link ,.liked:visited , .liked:hover {
+   color: red;
+   text-decoration:none;
+   background-color: #fff;
+}
+ .like{
+    
+    font-size: 40px;
+ }
+ .liked{
+   color:red;
+   font-size: 40px;
+}
+.heart{
+   span{
+      font-size: 20px;
+   }
+}

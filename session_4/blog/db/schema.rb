@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_105907) do
+ActiveRecord::Schema.define(version: 2021_02_14_164007) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -64,6 +64,14 @@ ActiveRecord::Schema.define(version: 2021_02_11_105907) do
     t.boolean "admin", default: false
     t.integer "private_articles_left", default: 5
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "views", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "article_id"
+    t.boolean "liked", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

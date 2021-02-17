@@ -1,12 +1,27 @@
-<div class="container-flow">
+<%= javascript_pack_tag 'article', 'data-turbolinks-track': 'reload' %>
+
+<div class = "container-flow">
+
 <img class="cover-img" src="<%=url_for(@article.image)%>">
   <h1 class="display-1"><%= @article.title %></h1>
   <p class="lead">
     <%= User.find(@article.user_id).name %> - <%= @article.created_at.strftime('%F') %>
   </p>
-  <p class="lead">Views: <%= @article.views %><p>
+  <p class="lead"><%= @article.views %> views<p>
+ 
+  <div class="heart">
+   <% if can? :like, @article %>
+      <% action = @view.liked ? 'unlike' : 'like' %>
+      <% classes = @view.liked ? 'liked fas fa-heart' : 'like far fa-heart' %>
+      <%= link_to '', url_for(controller: 'articles',action: action, only_path: true), remote: true, class: classes, id:  "heat_link" %><br>
+      <span id="count"><%= View.where( liked: true ).count %> likes</span>
+    <% else %>
+      <%= link_to '', '', class: 'like far fa-heart', id:  "heat_inactive" %><br>
+      <span id="count"><%= View.where( liked: true ).count %> likes</span>
+    <% end %>
+  </div>
 
-
+  <br>
   <p class="content">
     
     <%= @article.content %>

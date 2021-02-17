@@ -35,12 +35,18 @@ class Ability
 
       # Can destroy their own profile
       can :destroy, User, id: user.id
-            
+      
+      #cann like article
+      can :like, Article
+      can :unlike, Article
+      
       #admin
       if user.admin
         can :edit, Article
         can :update, Article
         can :destroy, Article
+        can :like, Article
+        can :unlike, Article
         can :edit, User
         can :update, User
         can :destroy, User
