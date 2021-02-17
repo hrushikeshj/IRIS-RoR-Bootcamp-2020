@@ -1,0 +1,6 @@
+<% if @view.liked %>
+  $("#heart_link").removeClass( "far like" ).addClass( "fas liked" );
+<% else %>
+	$("#heart_link").removeClass( "fas liked" ).addClass( "far like" );
+<% end %>
+$("#count").text( "<%= @likes %> likes")

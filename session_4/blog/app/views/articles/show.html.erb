@@ -1,4 +1,4 @@
-<%= javascript_pack_tag 'article', 'data-turbolinks-track': 'reload' %>
+
 
 <div class = "container-flow">
 
@@ -10,14 +10,13 @@
   <p class="lead"><%= @article.views %> views<p>
  
   <div class="heart">
-   <% if can? :like, @article %>
-      <% action = @view.liked ? 'unlike' : 'like' %>
+   <% if can? :flip_like, @article %>
       <% classes = @view.liked ? 'liked fas fa-heart' : 'like far fa-heart' %>
-      <%= link_to '', url_for(controller: 'articles',action: action, only_path: true), remote: true, class: classes, id:  "heat_link" %><br>
-      <span id="count"><%= View.where( liked: true ).count %> likes</span>
+      <%= link_to '', url_for(controller: 'articles',action: 'flip_like', only_path: true), remote: true, class: classes, id:  "heart_link" %><br>
+      <span id="count"><%= @likes %> likes</span>
     <% else %>
       <%= link_to '', '', class: 'like far fa-heart', id:  "heat_inactive" %><br>
-      <span id="count"><%= View.where( liked: true ).count %> likes</span>
+      <span id="count"><%= @likes %> likes</span>
     <% end %>
   </div>
 

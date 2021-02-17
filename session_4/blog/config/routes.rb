@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
-  get 'articles/:id/like', to: 'articles#like'
-  get 'articles/:id/unlike', to: 'articles#unlike'
+  get 'articles/:id/flip_like', to: 'articles#flip_like'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

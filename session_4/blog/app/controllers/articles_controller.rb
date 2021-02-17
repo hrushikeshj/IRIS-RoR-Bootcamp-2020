@@ -1,9 +1,9 @@
 class ArticlesController < ApplicationController
   load_and_authorize_resource
 
-  before_action :set_article, only: [:show, :edit, :update, :destroy, :like, :unlike]
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :flip_like]
   before_action :add_view, only: [:show]
-  before_action :set_view, only: [:like, :unlike, :show]
+  before_action :set_view, only: [:flip_like, :show]
   # GET /articles
   # GET /articles.json
   def index
@@ -27,6 +27,7 @@ class ArticlesController < ApplicationController
       flash[:alert]="Private articles left:"+ session[:private_articles_left].to_s
       current_user.update( private_articles_left: session[:private_articles_left])
     end
+    @likes = View.where( liked: true, article_id: @article.id ).count
     respond_to do |format|
       format.html
       format.pdf do
@@ -91,28 +92,17 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def like
-    #to like an article
-    if @view
-      @view.update( liked: true )
-      msg = "success"
-    else
-      msg = "err"
+  def flip_like
+    #to like and unlike an article
+    respond_to do |format|
+      format.html { redirect_to root_url, notice: 'Invalid path' }
+      if @view.update( liked: !@view.liked )
+        @likes = View.where( liked: true, article_id: @article.id ).count
+        format.js
+      else
+        format.js render json: { status: "err" }.to_json
+      end
     end
-    likes = View.where( liked: true ).count
-    render json: {status: msg, action: "liked", likes: likes}.to_json
-    
-  end
-
-  def unlike
-    if @view
-      @view.update( liked: false )
-      msg = "success"
-    else
-      msg = "err"
-    end
-    likes = View.where( liked: true ).count
-    render json: {status: msg, likes: likes, action: "unliked"}.to_json
   end
 
   private
@@ -129,7 +119,7 @@ class ArticlesController < ApplicationController
     #to add views
     def add_view
       if current_user
-        if !View.find_by("user_id = ? AND article_id = ? ", current_user.id, @article.id )
+        if !View.exists?(user_id: current_user.id, article_id: @article.id)
           View.new(user_id: current_user.id, article_id: @article.id).save
           #increase views
           @article.update(views: @article.views+1)
