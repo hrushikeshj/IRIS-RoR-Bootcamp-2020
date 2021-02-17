@@ -114,5 +114,5 @@ ___________________________________________________________________
 ![Popovers](blog_ss/pri.png)
 
 ## Like
-
+(useing ajax)
 ![like](blog_ss/a.gif)
